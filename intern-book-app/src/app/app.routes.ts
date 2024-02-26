@@ -12,7 +12,7 @@ export const routes: Routes = [
 @NgModule({
     imports: [
         RouterModule.forRoot(routes),
-        BookListComponent
+        BookListComponent,
     ],
     exports: [RouterModule],
 })
