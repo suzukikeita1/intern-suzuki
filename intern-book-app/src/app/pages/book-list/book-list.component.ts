@@ -9,6 +9,9 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDividerModule} from '@angular/material/divider';
+import { Book } from '../../types/book';
+import { BOOKS as mockBooks } from '../../mock-books';
+
 
 
 
@@ -32,5 +35,5 @@ import {MatDividerModule} from '@angular/material/divider';
 })
 
 export class BookListComponent {
-
+  books: Book[] = mockBooks;
 }
