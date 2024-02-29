@@ -1,18 +1,28 @@
-<mat-card *ngFor="let book of books" class="mat-card_info">
-    <mat-card-header>
-        <mat-card-title>
-            {{ book.name }}
-        </mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-        {{ book.detail }}
-    </mat-card-content>
-    <mat-card-content>
-        評価:{{ book.evaluation }}点
-    </mat-card-content>
-    <mat-card-content>
-        <div class="button-container">
-            <button mat-raised-button color="warn">削除</button>
-        </div>
-    </mat-card-content>
-</mat-card>
+<ng-container *ngIf="books && books.length > 0; else noData">
+    <div class="card-container">
+        <mat-card *ngFor="let book of books" class="mat-card_info">
+            <mat-card-header>
+                <mat-card-title>
+                    {{ book.name }}
+                </mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                {{ book.detail }}
+            </mat-card-content>
+            <mat-card-content>
+                評価:{{ book.evaluation }}点
+            </mat-card-content>
+            <mat-card-content>
+                <div class="button-container">
+                    <button mat-raised-button color="warn">削除</button>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</ng-container>
+
+<ng-template #noData>
+    <div class="noData">
+        <p>データがありません</p>
+    </div>
+</ng-template>
