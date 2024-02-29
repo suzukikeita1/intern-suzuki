@@ -25,5 +25,55 @@ export const BOOKS: Book[] = [
         name: 'Angularテスト',
         detail: 'Angularアプリケーションのテスト方法を学ぶ',
         evaluation: 70
-    }
+    },
+    {
+        name: 'Angularセキュリティ',
+        detail: 'Angularアプリケーションのセキュリティ対策を学ぶ',
+        evaluation: 65
+    },
+    {
+        name: 'Angularパフォーマンス',
+        detail: 'Angularアプリケーションのパフォーマンスを向上させる方法を学ぶ',
+        evaluation: 60
+    },
+    {
+        name: 'Angularデザイン',
+        detail: 'Angularアプリケーションのデザインを学ぶ',
+        evaluation: 55
+    },
+    {
+        name: 'Angularアーキテクチャ',
+        detail: 'Angularアプリケーションのアーキテクチャを学ぶ',
+        evaluation: 50
+    },
+    {
+        name: 'Angularモジュール',
+        detail: 'Angularアプリケーションのモジュールを学ぶ',
+        evaluation: 45
+    },
+    {
+        name: 'Angularコンポーネント',
+        detail: 'Angularアプリケーションのコンポーネントを学ぶ',
+        evaluation: 40
+    },
+    {
+        name: 'Angularディレクティブ',
+        detail: 'Angularアプリケーションのディレクティブを学ぶ',
+        evaluation: 35
+    },
+    {
+        name: 'Angularパイプ',
+        detail: 'Angularアプリケーションのパイプを学ぶ',
+        evaluation: 30
+    },
+    {
+        name: 'Angularサービス',
+        detail: 'Angularアプリケーションのサービスを学ぶ',
+        evaluation: 25
+    },
+    {
+        name: 'Angularルーティング',
+        detail: 'Angularアプリケーションのルーティングを学ぶ',
+        evaluation: 20
+    },
 ];

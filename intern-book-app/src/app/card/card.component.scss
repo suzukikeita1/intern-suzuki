@@ -1,0 +1,17 @@
+mat-card-header {
+    margin-bottom: 10px;
+}
+
+.mat-card_info {
+    margin: 0 auto 45px auto;
+    width: 95%;
+
+    mat-card-content {
+        margin-bottom: 7px;
+    }
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+}
