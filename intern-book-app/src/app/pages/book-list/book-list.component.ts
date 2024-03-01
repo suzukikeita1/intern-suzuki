@@ -9,6 +9,9 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDividerModule} from '@angular/material/divider';
+import { BOOKS } from '../../mock-books';
+import { FormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-book-list',
@@ -24,10 +27,20 @@ import {MatDividerModule} from '@angular/material/divider';
     MatInputModule,
     MatFormFieldModule,
     MatDividerModule,
+    FormsModule,
   ],
   templateUrl: './book-list.component.html',
   styleUrl: './book-list.component.scss'
 })
 
 export class BookListComponent {
+  newBook = { name: '', detail: '', evaluation: 0 };
+
+  addBook() {
+    if (this.newBook.name && this.newBook.detail && this.newBook.evaluation) {
+      BOOKS.push({ ...this.newBook });
+      this.newBook = { name: '', detail: '', evaluation: 0 };
+    }
+  }
+
 }
