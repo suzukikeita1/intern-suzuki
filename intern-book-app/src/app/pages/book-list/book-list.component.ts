@@ -9,8 +9,10 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDividerModule} from '@angular/material/divider';
-import { BOOKS } from '../../mock-books';
+import { Book } from '../../types/book';
 import { FormsModule } from '@angular/forms';
+import { BOOKS } from '../../mock-books';
+
 
 
 @Component({
@@ -38,7 +40,7 @@ export class BookListComponent {
 
   addBook() {
     if (this.newBook.name && this.newBook.detail && this.newBook.evaluation) {
-      BOOKS.push({ ...this.newBook });
+      BOOKS.push(this.newBook as Book);
       this.newBook = { name: '', detail: '', evaluation: 0 };
     }
   }
