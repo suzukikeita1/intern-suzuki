@@ -10,10 +10,10 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDividerModule} from '@angular/material/divider';
 import { Book } from '../../types/book';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgModel } from '@angular/forms';
 import { BOOKS } from '../../mock-books';
-
-
+import { ReactiveFormsModule } from '@angular/forms';
+import { ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-book-list',
@@ -30,6 +30,7 @@ import { BOOKS } from '../../mock-books';
     MatFormFieldModule,
     MatDividerModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
   templateUrl: './book-list.component.html',
   styleUrl: './book-list.component.scss'
@@ -37,12 +38,22 @@ import { BOOKS } from '../../mock-books';
 
 export class BookListComponent {
   newBook = { name: '', detail: '', evaluation: 0 };
+  books = BOOKS;
+  
+  @ViewChild('nameInput') nameInput!: NgModel;
+  @ViewChild('detailInput') detailInput!: NgModel;
+  @ViewChild('evaluationInput') evaluationInput!: NgModel;
 
   addBook() {
-    if (this.newBook.name && this.newBook.detail && this.newBook.evaluation) {
+    if (this.newBook.name && this.newBook.detail && 0 <= this.newBook.evaluation && this.newBook.evaluation <= 100) {
       BOOKS.push(this.newBook as Book);
       this.newBook = { name: '', detail: '', evaluation: 0 };
+      this.nameInput.reset();
+      this.detailInput.reset();
+      this.evaluationInput.reset();
     }
   }
 
 }
+
+
