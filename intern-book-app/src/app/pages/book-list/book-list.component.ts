@@ -45,7 +45,7 @@ export class BookListComponent {
   @ViewChild('evaluationInput') evaluationInput!: NgModel;
 
   addBook() {
-    if (this.newBook.name && this.newBook.detail && 0 <= this.newBook.evaluation && this.newBook.evaluation <= 100) {
+    if (this.newBook.name && this.newBook.detail && this.newBook.evaluation !== undefined && this.newBook.evaluation !== null && 0 <= this.newBook.evaluation && this.newBook.evaluation <= 100) {
       BOOKS.push(this.newBook as Book);
       this.newBook = { name: '', detail: '', evaluation: 0 };
       this.nameInput.reset();
