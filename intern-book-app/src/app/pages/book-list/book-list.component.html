@@ -5,19 +5,23 @@
     <mat-card-content>
         <mat-form-field>
             <mat-label>書籍名</mat-label>
-            <input matInput placeholder="" [(ngModel)]="newBook.name">
+            <input matInput [(ngModel)]="newBook.name" required #nameInput="ngModel">
+            <mat-error *ngIf="nameInput.invalid">この項目は必須です。</mat-error>
         </mat-form-field>
     </mat-card-content>
     <mat-card-content>
         <mat-form-field>
             <mat-label>あらすじ</mat-label>
-            <textarea matInput placeholder="" [(ngModel)]="newBook.detail"></textarea>
+            <textarea matInput [(ngModel)]="newBook.detail" required #detailInput="ngModel"></textarea>
+            <mat-error *ngIf="detailInput.invalid">この項目は必須です。</mat-error>
         </mat-form-field>
     </mat-card-content>
     <mat-card-content>
         <mat-form-field class="mat-form-field_point">
             <mat-label>評価点</mat-label>
-            <input matInput placeholder="" [(ngModel)]="newBook.evaluation">
+            <input matInput type="number" [(ngModel)]="newBook.evaluation" required min="0" max="100"
+                #evaluationInput="ngModel">
+            <mat-error *ngIf="evaluationInput.invalid">この項目は必須です。0以上100以下の数字を入力して下さい。</mat-error>
         </mat-form-field>
     </mat-card-content>
     <mat-card-content>

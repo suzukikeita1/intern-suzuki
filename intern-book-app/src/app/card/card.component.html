@@ -1,6 +1,6 @@
 <ng-container *ngIf="books && books.length > 0; else noData">
     <div class="card-container">
-        <mat-card *ngFor="let book of books" class="mat-card_info">
+        <mat-card *ngFor="let book of books; let i = index" class="mat-card_info" [id]="'card-' + i">
             <mat-card-header>
                 <mat-card-title>
                     {{ book.name }}
@@ -14,7 +14,7 @@
             </mat-card-content>
             <mat-card-content>
                 <div class="button-container">
-                    <button mat-raised-button color="warn">削除</button>
+                    <button mat-raised-button color="warn" (click)="openDialog(i,'0ms','0ms')">削除</button>
                 </div>
             </mat-card-content>
         </mat-card>
