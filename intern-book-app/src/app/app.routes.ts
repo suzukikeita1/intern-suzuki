@@ -3,7 +3,9 @@ import { BookListComponent } from './pages/book-list/book-list.component';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { FormControl } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+
 
 export const routes: Routes = [
     { path: '', redirectTo: '/book-list', pathMatch: 'full' },
@@ -17,7 +19,8 @@ export const routes: Routes = [
         FormsModule,
         ReactiveFormsModule,
         CommonModule,
-        FormControl
+        MatDialogModule,
+        MatButtonModule,
     ],
     exports: [RouterModule],
 })

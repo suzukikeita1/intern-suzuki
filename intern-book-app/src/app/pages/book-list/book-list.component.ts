@@ -14,6 +14,7 @@ import { FormsModule, NgModel } from '@angular/forms';
 import { BOOKS } from '../../mock-books';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ViewChild } from '@angular/core';
+import { MessageService } from '../../message.service';
 
 @Component({
   selector: 'app-book-list',
@@ -44,9 +45,12 @@ export class BookListComponent {
   @ViewChild('detailInput') detailInput!: NgModel;
   @ViewChild('evaluationInput') evaluationInput!: NgModel;
 
+  constructor(private messageService: MessageService) { }
+
   addBook() {
     if (this.nameInput.valid && this.detailInput.valid && this.evaluationInput.valid) {
       BOOKS.push(this.newBook as Book);
+      this.messageService.openDialog(this.newBook.name);
       this.newBook = { name: '', detail: '', evaluation: 0 };
       this.nameInput.reset();
       this.detailInput.reset();
